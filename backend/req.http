@@ -1,0 +1,66 @@
+### test
+GET http://localhost:5000/api/colleges
+
+###filter by state
+GET http://localhost:5000/api/colleges?state=Telangana
+
+###filter by fees
+GET http://localhost:5000/api/colleges?minFees=100000&maxFees=300000
+
+###filter by pagination
+GET http://localhost:5000/api/colleges?page=1&limit=2
+
+###invalid path
+GET http://localhost:5000//
+
+###search
+GET http://localhost:5000/api/colleges?search=iit
+
+###sort
+GET http://localhost:5000/api/colleges?sort=asc
+
+###REGISTER
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+    "name":"test",
+    "email":"test@mail.com",
+    "password":"test123"
+}
+
+
+###LOGIN
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"test@mail.com",
+    "password":"test123"
+}
+
+###logout
+POST http://localhost:5000/api/auth/logout
+
+### me
+GET http://localhost:5000/api/auth/me
+
+###save a college
+POST http://localhost:5000/api/saved/cmpow43570002pc327coqhpfw
+
+### get saved colleges
+GET http://localhost:5000/api/saved/
+
+###remove a saved college
+DELETE http://localhost:5000/api/saved/cmpow43570002pc327coqhpfw
+
+###compare colleges
+POST http://localhost:5000/api/compare
+Content-Type: application/json
+
+{
+    "collegeIds":[
+        "cmpow43570002pc327coqhpfw",
+        "cmpow43570003pc32g0wtw6zs"
+    ]
+}
